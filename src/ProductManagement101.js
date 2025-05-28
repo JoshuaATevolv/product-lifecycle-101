@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 const topics = [
   {
@@ -74,12 +73,7 @@ export default function ProductManagement101() {
         <p style={{ textAlign: 'right', fontSize: '0.875rem', color: '#4a5568' }}>{progressPercent}% Complete</p>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        style={{ marginBottom: '2rem', backgroundColor: '#ffffff', padding: '1.5rem', borderRadius: '8px' }}
-      >
+      <div style={{ marginBottom: '2rem', backgroundColor: '#ffffff', padding: '1.5rem', borderRadius: '8px' }}>
         <img src={topic.image} alt="Topic illustration" style={{ maxWidth: '100px', display: 'block', margin: '0 auto 1rem' }} />
         <h2 style={{ fontSize: '1.75rem', fontWeight: '600', color: '#2b6cb0', textAlign: 'center' }}>{topic.title}</h2>
         <p style={{ marginTop: '1rem', fontSize: '1.125rem' }}>{topic.content}</p>
@@ -91,13 +85,11 @@ export default function ProductManagement101() {
             ))}
           </ul>
         </div>
-      </motion.div>
+      </div>
 
       <div style={{ textAlign: 'center', marginTop: '2rem' }}>
         {!isLastPage ? (
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
             style={{
               backgroundColor: '#3182ce',
               color: 'white',
@@ -111,15 +103,11 @@ export default function ProductManagement101() {
             onClick={() => setPage(page + 1)}
           >
             Next Topic
-          </motion.button>
+          </button>
         ) : (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            style={{ fontWeight: '600', fontSize: '1.25rem', color: '#2f855a' }}
-          >
+          <p style={{ fontWeight: '600', fontSize: '1.25rem', color: '#2f855a' }}>
             You've completed all topics in Product Management 101!
-          </motion.p>
+          </p>
         )}
       </div>
     </div>
