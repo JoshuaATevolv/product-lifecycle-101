@@ -23,24 +23,51 @@ export default function ProductManagement101() {
 
   const pages = [
     <div>
-      <h2>What is Product Management vs Product Ownership?</h2>
-      <p>Product Management is about setting the long-term vision and strategy for a product. Product Managers focus on the market, customer needs, and the overall business value. Product Owners, often part of Agile teams, are responsible for defining user stories and prioritizing the backlog to guide development.</p>
+      <h2>🚀 What is Product Management vs Product Ownership?</h2>
+      <p>Imagine you’re the captain of a spaceship (the product). The <strong>Product Manager</strong> decides where the ship should go and why — based on star maps, crew feedback, and what’s happening in the galaxy (market). The <strong>Product Owner</strong> keeps the crew focused on reaching the next milestone, making sure each system (feature) is built and functioning correctly.</p>
+      <ul>
+        <li><strong>PM</strong>: Vision, strategy, user empathy, market fit</li>
+        <li><strong>PO</strong>: Backlog, refinement, sprint planning, team unblocking</li>
+      </ul>
+      <p><em>You’ll need to wear both hats sometimes, so understanding the difference helps you shift gears effectively.</em></p>
     </div>,
     <div>
-      <h2>Overview of the Product Lifecycle</h2>
-      <p>The product lifecycle is the journey a product takes from the idea stage to being retired. It has six main stages: Discovery, Development, Launch, Growth, Maturity, and Decline/Sunset.</p>
+      <h2>🌀 The Product Lifecycle</h2>
+      <p>Products, like living things, go through a journey. This journey is called the <strong>product lifecycle</strong> — and it helps you know what decisions to focus on.</p>
+      <ol>
+        <li><strong>Discovery</strong> – Is there a real problem? Who has it? Can we solve it?</li>
+        <li><strong>Development</strong> – Building and testing an MVP (minimum viable product)</li>
+        <li><strong>Launch</strong> – First public release — messaging, metrics, support</li>
+        <li><strong>Growth</strong> – Gaining users, improving onboarding, monetizing</li>
+        <li><strong>Maturity</strong> – Optimize, differentiate, scale sustainably</li>
+        <li><strong>Decline / Sunset</strong> – Product isn’t viable or needed anymore</li>
+      </ol>
+      <p><em>Good product leaders adjust their strategy depending on the stage. You’ll learn how.</em></p>
     </div>,
     <div>
-      <h2>The Mindset of a Product Leader</h2>
-      <p>Product leaders are problem-solvers who think about the customer first. They use data to make decisions, listen to feedback, and aren’t afraid to change direction if something isn’t working.</p>
+      <h2>🧠 The Mindset of a Product Leader</h2>
+      <p>Being a product owner is like being a curious detective and a calm coach. You ask questions, notice patterns, and guide your team toward the outcome — not just the output.</p>
+      <p><strong>Core traits:</strong></p>
+      <ul>
+        <li>Empathy → You build what users actually need</li>
+        <li>Clarity → You translate strategy into clear work</li>
+        <li>Curiosity → You’re always learning, testing, iterating</li>
+        <li>Focus → You say "no" more than "yes" to stay on track</li>
+      </ul>
     </div>,
     <div>
-      <h2>Case Study: The Rise and Fall of MySpace</h2>
-      <p>MySpace was once the most visited social networking site in the world. Poor product decisions, lack of innovation, and competition from Facebook led to its rapid decline. This highlights the importance of listening to users, adapting quickly, and maintaining product quality and focus.</p>
+      <h2>📉 Case Study: MySpace</h2>
+      <p>MySpace was once the top social network. What happened?</p>
+      <ul>
+        <li>They focused on customization over usability</li>
+        <li>Ignored feedback from users and developers</li>
+        <li>Slowed innovation while competitors (Facebook) sped up</li>
+      </ul>
+      <p><strong>Lesson:</strong> Products fail when the team stops listening and adapting. Great ideas die without great execution and evolution.</p>
     </div>,
     <div>
-      <h2>Word Problem Activity</h2>
-      <p>Imagine you created a mobile app for short video sharing. In the first year, your user base grows from 10,000 to 10 million, your app is trending, and you are making revenue from ads. What phase of the product lifecycle is your app in?</p>
+      <h2>🧩 Activity: Lifecycle Diagnosis</h2>
+      <p><strong>Scenario:</strong> You launch a short-form video app. Within a year, it goes viral. You scale from 10,000 to 10 million users and begin ad monetization. What stage is your product in?</p>
       {['Discovery', 'Launch', 'Growth', 'Sunset'].map((answer, i) => (
         <div key={i} style={{ marginBottom: '1rem' }}>
           <button onClick={() => handleAnswerClick(answer)} disabled={selectedAnswer !== null}>{answer}</button>
@@ -58,8 +85,14 @@ export default function ProductManagement101() {
       ))}
     </div>,
     <div>
-      <h2>Personal Product Vision Statement</h2>
-      <p>A product vision statement explains what your product aims to achieve and who it serves. It should be inspirational, clear, and focused. Include the target user, the problem being solved, and the unique value your product offers.</p>
+      <h2>📝 Define Your Product Vision</h2>
+      <p>Your vision is your north star — it helps align your team and prioritize work. A great product vision:</p>
+      <ul>
+        <li>Addresses a meaningful problem</li>
+        <li>Specifies who it’s for</li>
+        <li>Shares what success looks like</li>
+      </ul>
+      <p><em>Example: "Help neurodivergent students stay organized and reduce stress through a customizable, voice-activated planning app."</em></p>
       <textarea
         value={vision}
         onChange={(e) => setVision(e.target.value)}
@@ -78,18 +111,19 @@ export default function ProductManagement101() {
       </div>
     </div>,
     <div>
-      <h2>Submission Received</h2>
-      <p>Thank you <strong>{submittedVision?.name}</strong>!</p>
-      <p>Your Product Vision: {submittedVision?.vision}</p>
+      <h2>✅ Vision Submitted</h2>
+      <p>Thanks, <strong>{submittedVision?.name}</strong>! Here’s what you wrote:</p>
+      <blockquote style={{ fontStyle: 'italic', borderLeft: '4px solid #ccc', paddingLeft: '1rem' }}>{submittedVision?.vision}</blockquote>
+      <p>You’ll reflect on this in later modules. Save it somewhere you can revisit.</p>
     </div>
   ];
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', maxWidth: '700px', margin: '0 auto' }}>
+    <div style={{ padding: '2rem', fontFamily: 'Segoe UI, sans-serif', maxWidth: '800px', margin: '0 auto', background: '#f9fafb', borderRadius: '8px' }}>
       {pages[page]}
-      <div style={{ marginTop: '2rem' }}>
+      <div style={{ marginTop: '2rem', textAlign: 'right' }}>
         {page < pages.length - 1 && (
-          <button onClick={() => setPage(page + 1)}>Next</button>
+          <button onClick={() => setPage(page + 1)} style={{ backgroundColor: '#2b6cb0', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '6px', border: 'none', cursor: 'pointer' }}>Next →</button>
         )}
       </div>
     </div>
